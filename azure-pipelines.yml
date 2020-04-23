@@ -43,4 +43,11 @@ stages:
       displayName: 'Publish pipeline artifacts'
       inputs:
         targetPath: $(Build.ArtifactStagingDirectory)
-
+    - task: PublishCodeCoverageResults@1
+      inputs:
+       codeCoverageTool: 'cobertura'
+       summaryFileLocation: 
+    #pathToSources: # Optional
+    #reportDirectory: # Optional
+    #additionalCodeCoverageFiles: # Optional
+    #failIfCoverageEmpty: false # Optional
